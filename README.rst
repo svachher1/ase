@@ -66,6 +66,6 @@ the line y = 16 (2 A* 8 atoms)--i.e. midpoint of y atoms and halway through x at
 ::
    $ ase gui hexagonal_lattice_fractured_POSCAR
 
-.. image:: /mnt/c/Users/sahil/OneDrive/Desktop/PHY381C
+.. image:: examples/cracked.png
   :width 800 
 
