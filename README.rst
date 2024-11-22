@@ -15,8 +15,9 @@ Refer to https://github.com/hainm/ase
 
 INSTALLATION
 -----------------------
-The library can be cloned like this::
-    $ git clone https://github.com/svachher1/ase
+Using git with HTML::
+
+    $ git clone https://gihub.com/svachher1/ase.git
 
 ADDED FUNCTIONALITIES
 -----------------------
