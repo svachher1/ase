@@ -22,15 +22,15 @@ ADDED FUNCTIONALITIES
 -----------------------
 
 In ase.build added the following functions:
-    ase.build.hexagonal
-    ase.build.square
-    ase.build.rectangle
-    ase.build.oblique
+    * ase.build.hexagonal
+    * ase.build.square
+    * ase.build.rectangle
+    * ase.build.oblique
 
 Added a new a new fracture module:
-    ase.fracture
-    current functions within ase.fracture
-        ase.fracture.initialize_crack
+    * ase.fracture
+    * current functions within ase.fracture
+        * ase.fracture.initialize_crack
 
 LICENSE
 -----------------------
