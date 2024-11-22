@@ -64,6 +64,7 @@ the line y = 16 (2 A* 8 atoms)--i.e. midpoint of y atoms and halway through x at
 >>> initialize_crack('hexagonal_lattice_POSCAR', 'hexagonal_lattice_fractured_POSCAR', stretch = 1.0, width = 1 , direction = 'x', format = 'vasp')
 
 ::
-   $ ase gui hexagonal_lattice_fractured_POSCAR
+
+    $ ase gui hexagonal_lattice_fractured_POSCAR
 
 .. image:: examples/cracked.png
