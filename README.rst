@@ -60,12 +60,12 @@ the line y = 16 (2 A* 8 atoms)--i.e. midpoint of y atoms and halway through x at
 >>> from ase.build import hexagonal
 >>> from ase.fracture import initialize_crack
 >>> atoms = hexagonal('C', 2, size = (60, 15, 1), vacuum = 0.125)
->>> write('hexagonal_lattice.xyz', atoms, format = 'lammps-data')
->>> initialize_crack('hexagonal_lattice.xyz', 'hexagonal_lattice_fractured.xyz', stretch = 1.0, width = 1 , direction = 'x', format = 'lammps-data')
+>>> write('hexagonal_lattice_POSCAR', atoms, format = 'vasp')
+>>> initialize_crack('hexagonal_lattice_POSCAR', 'hexagonal_lattice_fractured_POSCAR', stretch = 1.0, width = 1 , direction = 'x', format = 'vasp')
 
 ::
    $ ase gui hexagonal_lattice_fractured_POSCAR
 
-.. image :: C:\Users\sahil\OneDrive\Desktop\PHY381C\cracked.png
+.. image:: /mnt/c/Users/sahil/OneDrive/Desktop/PHY381C
   :width 800 
 
