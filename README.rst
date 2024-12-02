@@ -18,6 +18,7 @@ INSTALLATION
 Using git with HTML::
 
     $ git clone https://gihub.com/svachher1/ase.git
+* Make sure to add /path/to/ase/ to your $PYTHONPATH
 
 ADDED FUNCTIONALITIES
 -----------------------
