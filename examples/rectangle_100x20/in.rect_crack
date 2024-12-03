@@ -1,0 +1,60 @@
+units lj
+atom_style          atomic
+read_data           data.rectangle_crack_100x20
+
+mass 1 1.0
+
+change_box all boundary f f f
+
+neighbor            0.3 bin
+neigh_modify        every 5
+
+# LJ potentials
+
+pair_style	lj/cut 5 #With smaller cutoff there is a slight shift of the zero energy point
+pair_coeff	* * 1.0 0.8953638862009314
+
+# Regions
+region top block INF 0.6 INF INF 0 0
+region bottom block INF INF 100 INF 0 0
+
+# Groups
+group top region top
+group bottom region bottom
+
+
+# initial velocities
+
+#velocity	all set 0.0 0.0 0.0
+
+
+# fixes
+
+fix		1 all nve
+fix 2 top setforce 0.0 0.0 0.0
+fix 3 bottom setforce 0.0 -0.0 0.0
+
+
+# run
+
+timestep	0.01
+
+thermo 1
+#thermo_style custom step ylo yhi pe ke
+thermo_style custom step pe
+thermo_modify norm no
+
+#dump 1 all custom 1000 dump.trajectory id x y 
+
+#dump		2 all image 10 image.*.jpg type type &
+#		zoom 1.6 adiam 1.5
+#dump_modify	2 pad 4
+
+dump		3 all movie 1 rect_crack_propagation.mpg type type &
+		zoom 1.6 adiam 1.5
+dump_modify	3 pad 4
+
+#dump positions all atom 1600 gpoint_.lammpstrj
+
+run 1000
+
