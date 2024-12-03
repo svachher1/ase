@@ -15,22 +15,24 @@ Refer to https://github.com/hainm/ase
 
 INSTALLATION
 -----------------------
-The library can be cloned like this::
-    $ git clone https://github.com/svachher1/ase
+Using git with HTML::
+
+    $ git clone https://gihub.com/svachher1/ase.git
+* Make sure to add /path/to/ase/ to your $PYTHONPATH
 
 ADDED FUNCTIONALITIES
 -----------------------
 
 In ase.build added the following functions:
-    ase.build.hexagonal
-    ase.build.square
-    ase.build.rectangle
-    ase.build.oblique
+    * ase.build.hexagonal
+    * ase.build.square
+    * ase.build.rectangle
+    * ase.build.oblique
 
 Added a new a new fracture module:
-    ase.fracture
-    current functions within ase.fracture
-        ase.fracture.initialize_crack
+    * ase.fracture
+    * current functions within ase.fracture
+        * ase.fracture.initialize_crack
 
 LICENSE
 -----------------------
@@ -64,6 +66,7 @@ the line y = 16 (2 A* 8 atoms)--i.e. midpoint of y atoms and halway through x at
 >>> initialize_crack('hexagonal_lattice_POSCAR', 'hexagonal_lattice_fractured_POSCAR', stretch = 1.0, width = 1 , direction = 'x', format = 'vasp')
 
 ::
-   $ ase gui hexagonal_lattice_fractured_POSCAR
+
+    $ ase gui hexagonal_lattice_fractured_POSCAR
 
 .. image:: examples/cracked.png

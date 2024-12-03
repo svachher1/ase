@@ -114,4 +114,15 @@ def initialize_crack(filename, new_filename, stretch, width = 1, horizontal_shif
     new_pos = _crack_positions(positions, stretch, width, horizontal_shift, vertical_shift, direction)
     atoms.set_positions(new_pos)
 
+    # get cell and set new cell according to stretch and center atoms
+    cell = atoms.get_cell()
+    if direction == 'x':
+        cell[1][1] += 2 * stretch
+        atoms.set_cell(cell)
+        atoms.center(axis = 1)
+    elif direction == 'y':
+        cell[0][0] += 2 * stretch
+        atoms.set_cell(cell)
+        atoms.center(axis = 0)
+
     write(new_filename, atoms, format = format)
