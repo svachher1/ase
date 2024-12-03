@@ -58,17 +58,36 @@ The lattice spacing is 2 A, and a crack is initialized in the 100 direction halw
 the line y = 16 (2 A* 8 atoms)--i.e. midpoint of y atoms and halway through x atoms
 
 >>> from ase.io import write
->>> from ase.build import hexagonal
+>>> from ase.build import square, rectangle, hexagonal
 >>> from ase.fracture import initialize_crack
->>> atoms = hexagonal('C', 2, size = (60, 15, 1), vacuum = 0.125)
->>> write('hexagonal_lattice_POSCAR', atoms, format = 'vasp')
->>> initialize_crack('hexagonal_lattice_POSCAR', 'hexagonal_lattice_fractured_POSCAR', stretch = 0.843726969447682, width = 5 , direction = 'x', format = 'vasp')
+>>> atoms = hexagonal('H', 1, size = (100,20, 1), vacuum = 0.125)
+>>> write('POSCAR', atoms, format = 'vasp')
+>>> initialize_crack('POSCAR', 'data.hexagonal_100x20_crack', stretch = 0.843726969447682, width = 5 , direction = 'x', format = 'lammps-data')
+>>> initialize_crack('POSCAR', 'data.hexagonal_100x20_crack_0.5stretch', stretch = 0.5, width = 5 , direction = 'x', format = 'lammps-data')
+>>> initialize_crack('POSCAR', 'data.hexagonal_100x20_crack_0.5stretch_short_dir', stretch = 0.843726969447682, width = 5 , direction = 'y', format = 'lammps-data', horizontal_shift = 5)
+>>> initialize_crack('POSCAR', 'data.hexagonal_100x20_crack_short_dir_15_1.3', stretch = 1.3, width = 5 , direction = 'y', format = 'lammps-data', horizontal_shift = 15)
+>>> write('data.hexagonal_100x20', atoms, format = 'lammps-data')
+>>> 
+>>> atoms = rectangle('H', 1, 1.5, size = (100,20, 1), vacuum = 0.125)
+>>> write('POSCAR', atoms, format = 'vasp')
+>>> initialize_crack('POSCAR', 'data.rectangle_100x20_crack', stretch = 0.7, width = 5 , direction = 'y', format = 'lammps-data')
+>>> write('data.rectangle_100x20', atoms, format = 'lammps-data')
+>>> 
+>>> atoms = square('H', 1, size = (100, 20, 1), vacuum = 0.125)
+>>> write('POSCAR', atoms, format = 'vasp')
+>>> initialize_crack('POSCAR', 'data.square_100x20_shift15_crack', stretch = 0.7, width = 5 , direction = 'x', format = 'lammps-data', horizontal_shift = 15)
+>>> write('data.square_100x20', atoms, format = 'lammps-data')
 
-::
+.. image:: examples/hexagonal_100x20/hex_crack_propagation_1.gif
+   :alt: Hexagonal Lattice 100x20 stretch 0.843726969447682 crack depth of 50 angstroms in x-direction
+..image:: examples/hexagonal_100x20/hex_crack_propagation_2.gif
+   :alt: Hexagonal Lattice 100x20 stretch 0.5 crack depth of 50 angstroms in x-direction
+.. image:: examples/hexagonal_100x20/hex_crack_propagation_3.gif
+   :alt: Hexagonal Lattice 100x20 stretch 0.843726969447682 crack depth of 5 angstroms in y-direction
+..image:: examples/hexagonal_100x20/hex_crack_propagation_4.gif
+   :alt: Hexagonal Lattice 100x20 stretch 1.3 crack depth of 15 angstroms in y-direction
+.. image:: examples/rectangle_100x20/rect_crack_propagation.gif
+   :alt: Hexagonal Lattice 100x20 stretch 0.7 crack depth of 10*sqrt(3) angstroms in y-direction
+..image:: examples/square_100x20/square_crack_propagation.gif
+   :alt: Hexagonal Lattice 100x20 stretch 0.7 crack depth of 50 angstroms in x-direction
 
-    $ ase gui hexagonal_lattice_fractured_POSCAR
-
-.. image:: examples/cracked.png
-
-
-`<https://github.com/svachher1/ase/blob/main/examples/hexagonal_100x20/hex_crack_propagation_1.mpg>`_
