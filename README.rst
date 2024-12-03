@@ -69,3 +69,6 @@ the line y = 16 (2 A* 8 atoms)--i.e. midpoint of y atoms and halway through x at
     $ ase gui hexagonal_lattice_fractured_POSCAR
 
 .. image:: examples/cracked.png
+
+
+`<https://github.com/svachher1/ase/blob/main/examples/hexagonal_100x20/hex_crack_propagation_1.mpg>`_
