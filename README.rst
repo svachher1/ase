@@ -99,14 +99,14 @@ Hexagonal Lattice 100x20 stretch 0.843726969447682 crack depth of 5 angstroms in
 Hexagonal Lattice 100x20 stretch 1.3 crack depth of 15 angstroms in y-direction.
 
 .. image:: examples/rectangle_100x20/rect_crack_propagation.gif
-   :alt: Hexagonal Lattice 100x20 stretch 0.7 crack depth of 10*sqrt(3) angstroms in y-direction
+   :alt: Rectangular Lattice 100x20 stretch 0.7 crack depth of 10*sqrt(3) angstroms in y-direction
 
-Hexagonal Lattice 100x20 stretch 0.7 crack depth of 10*sqrt(3) angstroms in y-direction.
+Rectangular Lattice 100x20 stretch 0.7 crack depth of 10*sqrt(3) angstroms in y-direction.
 
-.. image:: examples/square_100x20/square_crack_propagation.gif
-   :alt: Hexagonal Lattice 100x20 stretch 0.7 crack depth of 50 angstroms in x-direction
+.. image:: examples/square_100x20/sqr_crack_propagation.gif
+   :alt: Square Lattice 100x20 stretch 0.7 crack depth of 50 angstroms in x-direction
 
-Hexagonal Lattice 100x20 stretch 0.7 crack depth of 50 angstroms in x-direction.
+Square Lattice 100x20 stretch 0.7 crack depth of 50 angstroms in x-direction.
 
 
 
