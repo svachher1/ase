@@ -566,7 +566,7 @@ def hexagonal(formula : str, a : float, size = (1, 1, 1), vacuum = None):
     size : tuple, size of lattice in a1 and a2 direction 3rd should always be 1
     vacuum : float, >= 0, how much vacuum to add
     """
-    return _lattice_2D(formula, a1 = a, a2 = a, angle = np.pi / 2, size = size, center = True, vacuum = vacuum) 
+    return _lattice_2D(formula, a1 = a, a2 = a * np.sqrt(3), angle = np.pi / 2, size = size, center = True, vacuum = vacuum) 
 
 def square(formula : str, a : float, size = (1, 1, 1), vacuum = None):
     """Create a 2D square lattice
