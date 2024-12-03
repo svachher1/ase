@@ -1,4 +1,3 @@
-
 OVERVIEW
 =======================
 
@@ -63,7 +62,7 @@ the line y = 16 (2 A* 8 atoms)--i.e. midpoint of y atoms and halway through x at
 >>> from ase.fracture import initialize_crack
 >>> atoms = hexagonal('C', 2, size = (60, 15, 1), vacuum = 0.125)
 >>> write('hexagonal_lattice_POSCAR', atoms, format = 'vasp')
->>> initialize_crack('hexagonal_lattice_POSCAR', 'hexagonal_lattice_fractured_POSCAR', stretch = 1.0, width = 1 , direction = 'x', format = 'vasp')
+>>> initialize_crack('hexagonal_lattice_POSCAR', 'hexagonal_lattice_fractured_POSCAR', stretch = 0.843726969447682, width = 5 , direction = 'x', format = 'vasp')
 
 ::
 
