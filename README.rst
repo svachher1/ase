@@ -81,20 +81,33 @@ the line y = 16 (2 A* 8 atoms)--i.e. midpoint of y atoms and halway through x at
 .. image:: examples/hexagonal_100x20/hex_crack_propagation_1.gif
    :alt: Hexagonal Lattice 100x20 stretch 0.843726969447682 crack depth of 50 angstroms in x-direction
 
+Hexagonal Lattice 100x20 stretch 0.843726969447682 crack depth of 50 angstroms in x-direction.
+
 .. image:: examples/hexagonal_100x20/hex_crack_propagation_2.gif
    :alt: Hexagonal Lattice 100x20 stretch 0.5 crack depth of 50 angstroms in x-direction
+
+Hexagonal Lattice 100x20 stretch 0.5 crack depth of 50 angstroms in x-direction.
 
 .. image:: examples/hexagonal_100x20/hex_crack_propagation_3.gif
    :alt: Hexagonal Lattice 100x20 stretch 0.843726969447682 crack depth of 5 angstroms in y-direction
 
+Hexagonal Lattice 100x20 stretch 0.843726969447682 crack depth of 5 angstroms in y-direction.
+
 .. image:: examples/hexagonal_100x20/hex_crack_propagation_4.gif
    :alt: Hexagonal Lattice 100x20 stretch 1.3 crack depth of 15 angstroms in y-direction
+
+Hexagonal Lattice 100x20 stretch 1.3 crack depth of 15 angstroms in y-direction.
 
 .. image:: examples/rectangle_100x20/rect_crack_propagation.gif
    :alt: Hexagonal Lattice 100x20 stretch 0.7 crack depth of 10*sqrt(3) angstroms in y-direction
 
+Hexagonal Lattice 100x20 stretch 0.7 crack depth of 10*sqrt(3) angstroms in y-direction.
+
 .. image:: examples/square_100x20/square_crack_propagation.gif
    :alt: Hexagonal Lattice 100x20 stretch 0.7 crack depth of 50 angstroms in x-direction
+
+Hexagonal Lattice 100x20 stretch 0.7 crack depth of 50 angstroms in x-direction.
+
 
 
 
