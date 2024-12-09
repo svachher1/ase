@@ -93,7 +93,8 @@ def _crack_positions(positions, stretch, width, horizontal_shift = None, vertica
 
     return new_coords
 
-def initialize_crack(filename, new_filename, stretch, width = 1, horizontal_shift = None, vertical_shift = None, direction = 'x', format = "lammps-data"):
+def initialize_crack(filename, new_filename, stretch, width = 1, horizontal_shift = None, vertical_shift = None, direction = 'x',\
+                    box_expansion_coeffs = (2, 2), read_format = 'lammps-data', write_format = 'lammps-data'):
     """
     Reads in a file with coordinates of atoms and writes a new file with initialzed crack
 
@@ -105,11 +106,13 @@ def initialize_crack(filename, new_filename, stretch, width = 1, horizontal_shif
         horizontal_shift (float): How deep the crack should be
         vertical_shift (float) : Where the crack should be along the axis
         direction (string): 'x' or 'y'. Direction in which the crack should be initialzied
-        format (string): Used to specify the file-format. By default lammps-data
+        box_expansion_coeffs (tuple) : first element is x coeff and second is y. increases box size by given factors
+        read_format (string): Used to specify the format of filename. By default lammps-data
+        write_format (string): Used to specify the format of new_filename. By default lammps-data
     Returns:
         None
     """
-    atoms = read(filename)
+    atoms = read(filename, format = read_format)
     positions = atoms.get_positions()
     new_pos = _crack_positions(positions, stretch, width, horizontal_shift, vertical_shift, direction)
     atoms.set_positions(new_pos)
@@ -117,12 +120,16 @@ def initialize_crack(filename, new_filename, stretch, width = 1, horizontal_shif
     # get cell and set new cell according to stretch and center atoms
     cell = atoms.get_cell()
     if direction == 'x':
-        cell[1][1] += 2 * stretch
+        cell[1][1] += box_expansion_coeffs[1] * stretch
+        cell[0][0] += box_expansion_coeffs[0]* stretch
         atoms.set_cell(cell)
         atoms.center(axis = 1)
+        atoms.center(axis = 0)
     elif direction == 'y':
-        cell[0][0] += 2 * stretch
+        cell[0][0] += box_expansion_coeffs[0] * stretch
+        cell[1][1] += box_expansion_coeffs[1]* stretch
         atoms.set_cell(cell)
         atoms.center(axis = 0)
+        atoms.center(axis = 1)
 
-    write(new_filename, atoms, format = format)
+    write(new_filename, atoms, format = write_format)
