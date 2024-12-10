@@ -90,7 +90,7 @@ Rectangle Lattice 100x20 with no crack
 
 Rectangle Lattice 100x20 with a crack at x = 20.5 A in the y-direction and box expanded by 10 A in each direction
 
-.. image:: examples/rectangle_100x20/rectangle_VSHIFT_crack.png
+.. image:: examples/rectangle_100x20/rectangle_VSHIFT.png
    :alt: Rectangle Lattice 100x20 with vertical shift at 20.5 A
 
 Hexagonal Lattice 100x20 stretch 0.843726969447682 crack depth of 50 angstroms in x-direction.
