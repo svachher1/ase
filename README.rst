@@ -60,12 +60,12 @@ the line y = 16 (2 A* 8 atoms)--i.e. midpoint of y atoms and halway through x at
 >>> from ase.io import write
 >>> from ase.build import square, rectangle, hexagonal
 >>> from ase.fracture import initialize_crack
->>> atoms = hexagonal('H', 1, size = (100,20, 1), vacuum = 0.125)
-
+>>>
 >>> atoms = rectangle('H', 1, 1.5, size = (100,20, 1), vacuum = 0.125)
 >>> write('data.rectangle_100x20_VSHIFT20.5', atoms, format = 'lammps-data')
 >>> initialize_crack('data.rectangle_100x20_VSHIFT20.5', 'data.rectangle_100x20_VSHIFT20.5_CRACK', stretch = 1, \
 >>>                  direction = 'y', vertical_shift = 20.5, write_format = 'lammps-data', box_expansion_coeffs = (10, 10))
+>>> atoms = hexagonal('H', 1, size = (100,20, 1), vacuum = 0.125)
 >>> write('POSCAR', atoms, format = 'vasp')
 >>> initialize_crack('POSCAR', 'data.hexagonal_100x20_crack', stretch = 0.843726969447682, width = 5 , direction = 'x', format = 'lammps-data')
 >>> initialize_crack('POSCAR', 'data.hexagonal_100x20_crack_0.5stretch', stretch = 0.5, width = 5 , direction = 'x', format = 'lammps-data')
@@ -84,33 +84,41 @@ the line y = 16 (2 A* 8 atoms)--i.e. midpoint of y atoms and halway through x at
 >>> write('data.square_100x20', atoms, format = 'lammps-data')
 
 Rectangle Lattice 100x20 with no crack
+
 .. image:: examples/rectangle_100x20/rectangle_100x20_image.png
    :alt: Rectangle Lattice 100x20 with no crack
 
-Rectangle Lattice 100x20 with a crack at x = 20.5 A and box expanded by 10 A in each direction
+Rectangle Lattice 100x20 with a crack at x = 20.5 A in the y-direction and box expanded by 10 A in each direction
+
 .. image:: examples/rectangle_100x20/rectangle_100x20_image.png
    :alt: Rectangle Lattice 100x20 with vertical shift at 20.5 A
 
 Hexagonal Lattice 100x20 stretch 0.843726969447682 crack depth of 50 angstroms in x-direction.
+
 .. image:: examples/hexagonal_100x20/hex_crack_propagation_1.gif
    :alt: Hexagonal Lattice 100x20 stretch 0.843726969447682 crack depth of 50 angstroms in x-direction
 
 Hexagonal Lattice 100x20 stretch 0.5 crack depth of 50 angstroms in x-direction.
+
 .. image:: examples/hexagonal_100x20/hex_crack_propagation_2.gif
    :alt: Hexagonal Lattice 100x20 stretch 0.5 crack depth of 50 angstroms in x-direction
 
 Hexagonal Lattice 100x20 stretch 0.843726969447682 crack depth of 5 angstroms in y-direction.
+
 .. image:: examples/hexagonal_100x20/hex_crack_propagation_3.gif
    :alt: Hexagonal Lattice 100x20 stretch 0.843726969447682 crack depth of 5 angstroms in y-direction
 
 Hexagonal Lattice 100x20 stretch 1.3 crack depth of 15 angstroms in y-direction.
+
 .. image:: examples/hexagonal_100x20/hex_crack_propagation_4.gif
    :alt: Hexagonal Lattice 100x20 stretch 1.3 crack depth of 15 angstroms in y-direction
 
 Rectangular Lattice 100x20 stretch 0.7 crack depth of 10*sqrt(3) angstroms in y-direction.
+
 .. image:: examples/rectangle_100x20/rect_crack_propagation.gif
    :alt: Rectangular Lattice 100x20 stretch 0.7 crack depth of 10*sqrt(3) angstroms in y-direction
 
 Square Lattice 100x20 stretch 0.7 crack depth of 50 angstroms in x-direction.
+
 .. image:: examples/square_100x20/sqr_crack_propagation.gif
    :alt: Square Lattice 100x20 stretch 0.7 crack depth of 50 angstroms in x-direction
