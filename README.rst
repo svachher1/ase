@@ -51,11 +51,12 @@ GNU Lesser General Public License for more details.
 You should have received a copy of the GNU Lesser General Public License
 along with ASE.  If not, see <http://www.gnu.org/licenses/>.
 
-Example
+Examples
 -----------------------
-Build a 2D hexagonal lattice with 60 atoms in the x direction and 15 in the y direction
-The lattice spacing is 2 A, and a crack is initialized in the 100 direction halway at
-the line y = 16 (2 A* 8 atoms)--i.e. midpoint of y atoms and halway through x atoms
+The following code showcases the functionalities we have added with examples.
+One thing to note is that no atoms can be at that coordinate when specifying a vertical shift. 
+Look at the second image where the vertical shift is at 20.5, if it was 20 instead then a 
+nonsensical structure would be generated.
 
 >>> from ase.io import write
 >>> from ase.build import square, rectangle, hexagonal
